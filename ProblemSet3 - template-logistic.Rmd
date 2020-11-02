@@ -1,7 +1,7 @@
 ---
 title: "Title of Your Report"
-author: "Names of your Group Members"
-date: "Due Date"
+author: "Jie Huang(1004925156) Qing Li (1005148010) Mengyuan Wang(1005239341) Xi Zheng(1005153628)"
+date: "November 2nd, 2020"
 output:
   pdf_document: default
   html_document:
@@ -20,11 +20,6 @@ census_data <- read.csv("census_data.csv")
 
 
 ```
-
-# Title of your Report
-
-## Name(s) of Author(s) 
-## Date
 
 
 # Model
