@@ -1,0 +1,37 @@
+Table-1: Estimate Values for Predictor Varaibales,,,,,
+,Variable,Estimate Value,,Variable,Estimate Value
+B0,Race_Black,-2.3582,B33,State_LA                                         ,-0.6354
+B1,Race_Chinese,-1.2392,B34,State_MA                                          ,-1.7051
+B2,Race_Japanese  ,-1.3659,B35,State_MD                                           ,-0.9898
+B3,Race_Other race,-0.8260,B36,State_ME                                        ,-1.3594
+B4,Race_the Asian or Pacific Islander,-0.6966,B37,State_MI                                          ,-1.1773
+B5,Race_White ,-0.1107,B38,State_MN                                           ,-1.0184
+B6,Class_Self-employed ,0.0049,B39,State_MO                                           ,-0.8810
+B7,Class_Works for Wages ,0.3431,B40,State_MS                                           ,-0.2329
+B8,Sex_Male  ,-0.4662,B41,State_MT                                           ,-0.8983
+B9,Age ,0.0126,B42,State_NC                                      ,-0.8304
+B10,"Edu_Completed 
+some High School(Grade 9 -11)   ",0.5064,B43,State_ND                                        ,0.0204
+B11,"Edu_Education Above 
+High School(Less than 3 year) ",0.1395,B44,State_NE                                          ,-0.7679
+B12,Edu_High School Graduate                        ,0.4254,B45,State_NH                                          ,-1.2088
+B13,Edu_Higher than College Degree                  ,0.1059,B46,State_NJ                                         ,-0.9528
+B14,Edu_Less than Grade 4                            ,0.5416,B47,State_NM                                          ,-1.6963
+B15,Edu_Middle School(Grade 4-8)                      ,0.2012,B48,State_NV                                        ,-0.6241
+B16,State_AL                                          ,-0.4432,B49,State_NY                                         ,-1.0622
+B17,State_AR                                         ,0.0322,B50,State_OH                                          ,-0.8810
+B18,State_AZ                                          ,-0.7603,B51,State_OK                                          ,-0.5357
+B19,State_CA                                          ,-1.2293,B52,State_OR                                          ,-1.1615
+B20,State_CO                                          ,-0.8467,B53,State_PA                                         ,-0.6445
+B21,State_CT                                     ,-1.9094,B54,State_RI                                         ,-1.5576
+B22,State_DC                                           ,-1.3529,B55,State_SC                                           ,-0.0889
+B23,State_DE                                          ,-1.4686,B56,State_SD                                         ,-0.6170
+B24,State_FL                                          ,-0.8248,B57,State_TN                                        ,-0.2323
+B25,State_GA                                           ,-0.5011,B58,State_TX                                         ,-0.4594
+B26,State_HI                                          ,-0.9956,B59,State_UT                                          ,-0.4318
+B27,State_IA                                           ,-1.0758,B60,State_VA                                        ,-1.0450
+B28,State_ID                                          ,-0.2363,B61,State_VT                                           ,-3.3666
+B29,State_IL                                           ,-1.0501,B62,State_WA                                          ,-1.1754
+B30,State_IN                           ,-0.8101,B63,State_WI                                       ,-1.2699
+B31,State_KS                                           ,-0.4900,B64,State_WV                                          ,-0.5146
+B32,State_KY                                          ,-0.8248,B65,State_WY                                          ,-1.5506
