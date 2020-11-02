@@ -1,44 +1,39 @@
 #### Preamble ####
-# Purpose: Prepare and clean the survey data downloaded from [...UPDATE ME!!!!!]
-# Author: Rohan Alexander and Sam Caetano [CHANGE THIS TO YOUR NAME!!!!]
-# Data: 22 October 2020
-# Contact: rohan.alexander@utoronto.ca [PROBABLY CHANGE THIS ALSO!!!!]
-# License: MIT
-# Pre-requisites: 
-# - Need to have downloaded the data from X and save the folder that you're 
-# interested in to inputs/data 
-# - Don't forget to gitignore it!
+# Purpose: Prepare and clean the survey data downloaded from https://www.voterstudygroup.org/publication/nationscape-data-set 
+# Author: Jie Huang(1004925156) Qing Li (1005148010) Mengyuan Wang(1005239341) Xi Zheng(1005153628)
+# Data: 02 November 2020
+# Contact: xi.zheng@mail.utoronto.ca
 
 
 #### Workspace setup ####
 library(haven)
 library(tidyverse)
+library(dplyr)
 
 
 # Read in the raw data (You might need to change this if you use a different dataset)
 raw_data <- read_dta("ns20200625.dta")
+
 # Add the labels
 raw_data <- labelled::to_factor(raw_data)
 # Just keep some variables
 reduced_data <- 
-  raw_data %>% select(vote_2020, gender, race_ethnicity, household_income, employment, education, state,age)
-
+  raw_data %>% select(vote_2020, gender, race_ethnicity, household_income, employment, education, state, age)
+# In order to see a significant proportion difference between votes for Trump and Biden, 
+#we clean all observations chosen other than Trump and Biden from the survey data and 
+#assume people vote only for Trump or Biden
 reduced_data <- reduced_data[(reduced_data$vote_2020 == 1|reduced_data$vote_2020 ==2),]
-#### What else???? ####
-# Maybe make some age-groups?
-# Maybe check the values?
-# Is vote a binary? If not, what are you going to do?
-
+ 
+# create binary columns to fit the model
 reduced_data<-
   reduced_data %>%
   mutate(vote_trump = 
            ifelse(vote_2020==1, 1, 0))
-
 reduced_data<-
   reduced_data %>%
   mutate(vote_biden = 
            ifelse(vote_2020==2, 1, 0))
-
+# change resopondent's answer from code number in to descriptions
 seta <- c(4,6,8,9,10,11,12,13,14)
 reduced_data <- 
   reduced_data %>%
@@ -78,7 +73,6 @@ reduced_data <-
 
 # Saving the survey/sample data as a csv file in my
 # working directory
-write_csv(reduced_data, "survey_data.csv")
-#summary(model1)
+#write_csv(reduced_data, "survey_data.csv")
 
 

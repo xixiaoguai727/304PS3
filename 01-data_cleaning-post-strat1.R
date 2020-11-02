@@ -1,12 +1,9 @@
 #### Preamble ####
-# Purpose: Prepare and clean the survey data downloaded from [...UPDATE ME!!!!!]
-# Author: Rohan Alexander and Sam Caetano [CHANGE THIS TO YOUR NAME!!!!]
-# Data: 22 October 2020
-# Contact: rohan.alexander@utoronto.ca [PROBABLY CHANGE THIS ALSO!!!!]
-# License: MIT
-# Pre-requisites: 
-# - Need to have downloaded the ACS data and saved it to inputs/data
-# - Don't forget to gitignore it!
+# Purpose: Prepare and clean the survey data downloaded from https://usa.ipums.org/usa/index.shtml
+# Author: Jie Huang(1004925156) Qing Li (1005148010) Mengyuan Wang(1005239341) Xi Zheng(1005153628)
+# Data: 02 November 2020
+# Contact: xi.zheng@mail.utoronto.ca
+
 
 
 #### Workspace setup ####
@@ -16,31 +13,17 @@ library(tidyverse)
 raw_data <- read_dta("usa_00002.dta")
 
 
-# Add the labels
-raw_data <- labelled::to_factor(raw_data)
-
-# Just keep some variables that may be of interest (change 
-# this depending on your interests)
+# Just keep some variable we interested in
 
 reduced_data <- 
   raw_data %>% 
-  select(age, race, educ, citizen,perwt,stateicp,classwkr,sex)#, 
-         #race, 
-         #hispan,
-         #marst, 
-         #bpl,
-         #citizen,
-         #educd,
-         #labforce,
-         #labforce)
-         
+  select(age, race, educ, citizen,perwt,stateicp,classwkr,sex)
+
+# remove observations who is not an U.S. citizen and age under 18       
 reduced_data <- reduced_data[(reduced_data$citizen == 2),]
 reduced_data <- reduced_data[(18<=reduced_data$age),]
-#### What's next? ####
 
-## Here I am only splitting cells by age, but you 
-## can use other variables to split by changing
-## count(age) to count(age, sex, ....)
+## change resopondent's answer from code number in to descriptions
 set1 <- c(0,1)
 set2 <- c(3,4,5)
 set3 <- c(7,8,9)
@@ -130,7 +113,7 @@ reduced_data <-
 # Saving the census data as a csv file in my
 # working directory
 
-write_csv(reduced_data, "census_data.csv")
+#write_csv(reduced_data, "census_data.csv")
 
 
 
